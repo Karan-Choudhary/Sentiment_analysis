@@ -1,12 +1,12 @@
 import pandas as pd
 from tensorflow.keras.models import load_model
-from src.get_data import PreprocessData
+from app.src.get_data import PreprocessData
 
 
 # inference class
 class Inference(PreprocessData):
     def __init__(self):
-        self.model = load_model('saved_models/Final_model.h5')
+        self.model = load_model('app/saved_models/Final_model.h5')
         self.dataset = None
         self.X_final = None
         

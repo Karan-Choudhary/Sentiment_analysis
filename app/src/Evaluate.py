@@ -3,8 +3,8 @@ from sklearn.metrics import accuracy_score,classification_report
 
 from tensorflow.keras.models import load_model
 
-from get_data import PreprocessData
-from train import TrainModel
+from app.src.get_data import PreprocessData
+from app.src.train import TrainModel
 
 # create a class for evaluating the model
 

@@ -17,10 +17,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score,classification_report
 
-from get_data import PreprocessData
-from model import Model
-from train import TrainModel
-from Evaluate import EvaluateModel
+from app.src.get_data import PreprocessData
+from app.src.model import Model
+from app.src.train import TrainModel
+from app.src.Evaluate import EvaluateModel
 
 
 if __name__ == '__main__':
@@ -29,6 +29,7 @@ if __name__ == '__main__':
     From this file, user can select the option to train and evaluate the model or evaluate the model only
     '''
     # call classes
+    # please change the path of the dataset accordingly
     path = 'data/airline_sentiment_analysis.csv'
     
     print("=====================================")
