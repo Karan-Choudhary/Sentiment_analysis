@@ -16,11 +16,6 @@ def predict(message: str):
     # make predictions
     y_pred = inferenceClass.predict()
     
-    print("=====================================")
-    print(y_pred)
-    print(type(y_pred))
-    print(y_pred[0][0])
-    print("=====================================")
     # return the result
     
     if y_pred[0][0] == 0:
@@ -28,4 +23,4 @@ def predict(message: str):
     else:
         return {"prediction": "Positive"}
     
-    return {"prediction": message}
+    return {"prediction": "Something went wrong"}
