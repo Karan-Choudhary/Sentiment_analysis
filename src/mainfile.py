@@ -11,7 +11,6 @@ from tensorflow.keras.layers import LSTM, Dense, Bidirectional, Dropout
 import nltk
 import re
 from nltk.corpus import stopwords
-
 from nltk.stem.porter import PorterStemmer
 
 from sklearn.model_selection import train_test_split
@@ -24,24 +23,32 @@ from train import TrainModel
 from Evaluate import EvaluateModel
 
 
-
-
 if __name__ == '__main__':
+    '''
+    This is the main file which calls all the classes
+    From this file, user can select the option to train and evaluate the model or evaluate the model only
+    '''
     # call classes
     path = 'data/airline_sentiment_analysis.csv'
-
+    
     print("=====================================")
-    # print("Training started...")
-    
-    
-    # trainclass = TrainModel(path)
-    # trainclass.train_model()
-    
-    # print("Training completed...")
-    # print("=====================================")
-    print("Evaluation started...")
-    
-    evalClass = EvaluateModel(path)
-    evalClass.evaluate_model()
-    print("Evaluation completed...")
+    print("Please select the option:")
+    print("1. Train and evaluate the model")
+    print("2. Evaluate the model only")
     print("=====================================")
+    
+    # Take input from the user
+    choice = int(input("Enter your choice: "))
+    
+    if choice == 1:
+        # Train the model
+        trainclass = TrainModel(path)
+        trainclass.train_model()
+        
+        # Evaluate the model
+        evalClass = EvaluateModel(path)
+        evalClass.evaluate_model()
+    
+    elif choice == 2:
+        evalClass = EvaluateModel(path)
+        evalClass.evaluate_model()
