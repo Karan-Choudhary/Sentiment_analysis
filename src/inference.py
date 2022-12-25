@@ -15,8 +15,6 @@ class Inference(PreprocessData):
         PreprocessDataClass = PreprocessData("")
         self.X_final = PreprocessDataClass.preprocessing_for_prediction(self.dataset)
         
-        print(self.X_final)
-        
     def predict(self):
-        y_pred = (self.model.predict(self.X_final) > 0.4).astype("int32")
+        y_pred = (self.model.predict(self.X_final) > 0.5).astype("int32")
         return y_pred
