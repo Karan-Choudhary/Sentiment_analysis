@@ -11,6 +11,17 @@ from tensorflow.keras.preprocessing.text import one_hot
 
 
 class PreprocessData:
+    '''
+    This class is used for loading the data and preprocessing the data
+    Preprocessing includes:
+    1. Removing special characters
+    2. Removing stopwords
+    3. Stemming
+    4. One hot encoding
+    5. Padding
+    6. Embedding
+    7. Splitting the data into train and test
+    '''
     def __init__(self, path):
         self.path = path
         
@@ -32,7 +43,13 @@ class PreprocessData:
         return X, y
     
     def preprocessing(self):
-        voc_size = 10000
+        
+        print("=====================================")
+        print("Loading data and preprocessing...")
+        
+        # voc_size = 10000
+        
+        voc_size = 90000
         
         X, y = PreprocessData.splitting(self)
         
@@ -50,17 +67,25 @@ class PreprocessData:
             corpus.append(review)
         
         onehot_repr = [one_hot(words, voc_size) for words in corpus]
-        sent_length = 20
+        # sent_length = 20
+        sent_length = 40
         embedded_docs = pad_sequences(onehot_repr, padding='pre', maxlen=sent_length)
         
         self.X_final = np.array(embedded_docs)
         self.y_final = np.array(y)
         
         X_train, X_test, y_train, y_test = train_test_split(self.X_final, self.y_final, test_size=0.3, random_state=42, stratify=self.y_final)
+        
+        print("Data loaded and preprocessed...")
+        print("=====================================")
         return X_train, X_test, y_train, y_test
     
     def preprocessing_for_prediction(self,dataset):
-        voc_size = 10000
+        print("=====================================")
+        print("Loading data and preprocessing...")
+        
+        # voc_size = 10000
+        voc_size = 90000
         
         messages = dataset['text'].copy()
         ps = PorterStemmer()
@@ -76,15 +101,12 @@ class PreprocessData:
             corpus.append(review)
         
         onehot_repr = [one_hot(words, voc_size) for words in corpus]
-        sent_length = 20
+        # sent_length = 20
+        sent_length = 40
         embedded_docs = pad_sequences(onehot_repr, padding='pre', maxlen=sent_length)
         
         self.X_final = np.array(embedded_docs)
+        print("Data loaded and preprocessed...")
+        print("=====================================")
         
         return self.X_final
-        
-    
-
-
-# call classes
-# data = PreprocessData('data/airline_tweets.csv')
