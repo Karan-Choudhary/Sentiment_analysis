@@ -74,7 +74,7 @@ class PreprocessData:
         self.X_final = np.array(embedded_docs)
         self.y_final = np.array(y)
         
-        X_train, X_test, y_train, y_test = train_test_split(self.X_final, self.y_final, test_size=0.3, random_state=42, stratify=self.y_final)
+        X_train, X_test, y_train, y_test = train_test_split(self.X_final, self.y_final, test_size=0.2, random_state=42, stratify=self.y_final)
         
         print("Data loaded and preprocessed...")
         print("=====================================")

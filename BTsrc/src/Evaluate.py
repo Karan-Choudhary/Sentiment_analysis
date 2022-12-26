@@ -24,10 +24,10 @@ class EvaluateModel(PreprocessData):
         self.path = path
         _, self.X_test, _, self.y_test = super().preprocessing()
         
-        self.model = None
-        
+        self.model = None 
+           
         try:
-            self.model = load_model(r"C:\Users\Karan Choudhary\Documents\Projects\Internship\app\saved_models\Final_model.h5")
+            self.model = load_model(r"BTsrc\app\saved_models\Final_model.h5")
             
         except:
             print("Model not found...")

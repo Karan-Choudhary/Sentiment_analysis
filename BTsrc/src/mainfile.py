@@ -53,3 +53,6 @@ if __name__ == '__main__':
     elif choice == 2:
         evalClass = EvaluateModel(path)
         evalClass.evaluate_model()
+        
+    else:
+        print("Invalid choice. Please select the correct option.")

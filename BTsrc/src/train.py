@@ -37,7 +37,7 @@ class TrainModel(Model):
         print("=====================================")
         print("Saving the model...")
         # save the model
-        self.model.save('saved_models/Final_model.h5')
+        self.model.save(r"BTsrc\app\saved_models\Final_model.h5")
         print("Model saved...")
         print("=====================================")
         return self.model
