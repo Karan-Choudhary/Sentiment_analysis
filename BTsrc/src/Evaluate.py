@@ -3,8 +3,8 @@ from sklearn.metrics import accuracy_score,classification_report
 
 from tensorflow.keras.models import load_model
 
-from app.src.get_data import PreprocessData
-from app.src.train import TrainModel
+from get_data import PreprocessData
+from train import TrainModel
 
 # create a class for evaluating the model
 
@@ -27,7 +27,8 @@ class EvaluateModel(PreprocessData):
         self.model = None
         
         try:
-            self.model = load_model('saved_models/Final_model.h5')
+            self.model = load_model(r"C:\Users\Karan Choudhary\Documents\Projects\Internship\app\saved_models\Final_model.h5")
+            
         except:
             print("Model not found...")
             print("Starting model training phase...")
@@ -50,7 +51,7 @@ class EvaluateModel(PreprocessData):
         print(accuracy_score(self.y_test, y_pred))
         print("=====================================")
         # write the result in a json file
-        with open('results/result.json', 'w') as f:
+        with open(r"BTsrc\results\result.json", 'w') as f:
             f.write(classification_result)
             f.write(str(cm))
             f.write(str(accuracy_score(self.y_test, y_pred)))

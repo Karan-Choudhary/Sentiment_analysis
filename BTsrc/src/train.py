@@ -5,8 +5,8 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.preprocessing.text import one_hot
 from tensorflow.keras.layers import LSTM, Dense, Bidirectional, Dropout
 
-from app.src.get_data import PreprocessData
-from app.src.model import Model
+from get_data import PreprocessData
+from model import Model
 
 # create a class for training the model which inherit Model class
 

@@ -17,10 +17,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score,classification_report
 
-from app.src.get_data import PreprocessData
-from app.src.model import Model
-from app.src.train import TrainModel
-from app.src.Evaluate import EvaluateModel
+from get_data import PreprocessData
+from model import Model
+from train import TrainModel
+from Evaluate import EvaluateModel
 
 
 if __name__ == '__main__':
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     '''
     # call classes
     # please change the path of the dataset accordingly
-    path = 'data/airline_sentiment_analysis.csv'
+    path = r"BTsrc\data\airline_sentiment_analysis.csv"
     
     print("=====================================")
     print("Please select the option:")

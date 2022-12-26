@@ -1,10 +1,13 @@
 from typing import Union
 from fastapi import FastAPI
 from pydantic import BaseModel
+# from mangum import Mangum
+# import uvicorn
 
-from app.src.inference import Inference
+from app.inference import Inference
 
 app = FastAPI()
+# handler = Mangum(app)
 
 class TextIn(BaseModel):
     text: str
@@ -36,3 +39,6 @@ def predict(message: str):
     sentiment = "Something went wrong"
     return {"sentiment": sentiment}
     # return {"prediction": "Something went wrong"}
+    
+# if __name__ == "__main__":
+#     uvicorn.run(app, host="0.0.0.0", port=9000)
