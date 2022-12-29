@@ -25,5 +25,5 @@ docker build -t sentiment_analysis .
 ```
 * Run the docker image using command:
 ```
-docker run -d -p 80:80 sentiment_analysis
+docker run -p 80:80 sentiment_analysis
 ```
