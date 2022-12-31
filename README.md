@@ -18,7 +18,7 @@ pip install -r requirements.txt
 BuildTrain.bat (For Windows)
 ``` 
 * Put you own data in ***BTsrc/data*** directory named as airline_sentiment_analysis.csv
-* Saved model will be saved in ***BTsrc/app/saved_models*** directory.
+* Saved model will be saved in ***BTsrc/app/saved_models*** directory or you can download [Pretrained Model](https://githubmodels.s3.ap-northeast-1.amazonaws.com/Final_model.h5) from here and put in ***BTsrc/app/saved_models*** directory.
 * To test the api, build the docker image using command:
 ```
 docker build -t sentiment_analysis .
