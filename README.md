@@ -1,4 +1,5 @@
 ## Sentiment Analysis using LSTM
+* [Try out the application](http://54.95.205.156:5000/docs)
 * Sentiment Analysis is a process of determining whether a piece of writing is positive or negative.
 * API is developed using [FastAPI](https://fastapi.tiangolo.com/)
 * Model is build using [Tensorflow](https://www.tensorflow.org/) and [Keras](https://keras.io/)
